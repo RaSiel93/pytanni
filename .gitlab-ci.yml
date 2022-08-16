@@ -3,8 +3,8 @@ image: node:latest
 .deploy: &deploy
 - npm install -g firebase-tools
 - firebase use pytanni --token $FIREBASE_TOKEN
-- yarn
-- yarn build
+- npm
+- npm CI=false build
 
 cache:
   paths:
