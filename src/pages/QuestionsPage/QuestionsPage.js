@@ -1,4 +1,757 @@
+import './QuestionsPage.css';
+
+const questions = [
+  {
+    text: 'Якія мэтады HTTP-запытаў самі знаеце?',
+    level: 'junior',
+    topic: 'general'
+  },
+  {
+    text: 'Якія вэрсіі HTTP-пратаколу вашэці вядомы?',
+    level: 'junior',
+    topic: 'general'
+  },
+  {
+    text: 'Якія знаеце коды адказу (стану) HTTP?',
+    level: 'junior',
+    topic: 'general'
+  },
+  {
+    text: 'Што такое Cross-Origin Resource Sharing? Як пазбавіцца праблем з CORS?',
+    level: 'junior',
+    topic: 'general'
+  },
+  {
+    text: 'Што такое cookie?',
+    level: 'junior',
+    topic: 'general'
+  },
+  {
+    text: 'Які максымальны памер cookie?',
+    level: 'junior',
+    topic: 'general'
+  },
+  {
+    text: 'Што азначае дырэктыва use strict?',
+    level: 'junior',
+    topic: 'general'
+  },
+  {
+    text: 'Чым JS адрозьніваецца падчас работы на front-end і back-end?',
+    level: 'junior',
+    topic: 'general'
+  },
+  {
+    text: 'Што такое статычная і дынамічная тыпізацыі?',
+    level: 'junior',
+    topic: 'general'
+  },
+  {
+    text: 'Як кліент узаемадзейнічае з сэрвэрам?',
+    level: 'junior',
+    topic: 'general'
+  },
+  {
+    text: 'Што такое REST?',
+    level: 'junior',
+    topic: 'general'
+  },
+  {
+    text: 'Патлумачце паняцьце мутабэльнасьць/імутабэльнасьць? Якія тыпы ёсьцека мутабэльнымі й наадварот?',
+    level: 'junior',
+    topic: 'general'
+  },
+  {
+    text: 'Як шукаць памылкі ў кодзе? Ці выкарыстоўваеце дэбагер?',
+    level: 'junior',
+    topic: 'general'
+  },
+  {
+    text: 'Якіх вядомых людзей са сьвету JS знаеце?',
+    level: 'junior',
+    topic: 'general'
+  },
+  {
+    text: 'Якія тыпы дадзеных існуюць у JS?',
+    level: 'junior',
+    topic: 'core'
+  },
+  {
+    text: 'Як праверыць, ці аб’ект ёсьцека масівам?',
+    level: 'junior',
+    topic: 'core'
+  },
+  {
+    text: 'Як праверыць, ці лік ё скончаным?',
+    level: 'junior',
+    topic: 'core'
+  },
+  {
+    text: 'Як праверыць, што пераменная роўная NaN?',
+    level: 'junior',
+    topic: 'core'
+  },
+  {
+    text: 'Чым адрозьніваюцца паводзіны isNaN() і Number.isNaN()?',
+    level: 'junior',
+    topic: 'core'
+  },
+  {
+    text: 'Параўнайце ключавыя словы var, let, const.',
+    level: 'junior',
+    topic: 'core'
+  },
+  {
+    text: 'Што такое вобласьць бачнасьці?',
+    level: 'junior',
+    topic: 'core'
+  },
+  {
+    text: 'Што такое дэструктурызаца?',
+    level: 'junior',
+    topic: 'core'
+  },
+  {
+    text: 'Для чаго прызначаны мэтады setTimeout і setInterval?',
+    level: 'junior',
+    topic: 'core'
+  },
+  {
+    text: 'Параўнайце падыходы работы з асінхроным кодам: callbacks vs promises vs async/await.',
+    level: 'junior',
+    topic: 'core'
+  },
+  {
+    text: 'Ці можна запісваць новыя ўласьцівасьці/хвункцыі ў прататыпы стандартных клясаў (Array, Object і г.д.)? Чаму не?',
+    level: 'junior',
+    topic: 'core'
+  },
+  {
+    text: 'Назавіце мэтады масіваў, якія памятаеце, і скажыце, для чаго яны патрэбны.',
+    level: 'junior',
+    topic: 'core'
+  },
+  {
+    text: 'Якія мэтады перабіраньня масіву знаеце? У чым іх адменнасьць?',
+    level: 'junior',
+    topic: 'core'
+  },
+  {
+    text: 'Як працуюць апэратары прысвойваньня/параўнаньня/радковыя/арыхмэтычныя/бітавыя і г.д.?',
+    level: 'junior',
+    topic: 'core'
+  },
+  {
+    text: 'Апішыце прызначэньне й прынцыпы работы з калекцамі Map і Set.',
+    level: 'junior',
+    topic: 'core'
+  },
+  {
+    text: 'Што азначае глыбокая (deep) і павярхоўная (shallow) копія аб’екта? Як зрабіць кожную зь іх?',
+    level: 'junior',
+    topic: 'core'
+  },
+  {
+    text: 'Якая розьніца паміж абвяшчэньнем хвункцыі (function declaration) ды хвункцанальным выразам?',
+    level: 'junior',
+    topic: 'function'
+  },
+  {
+    text: 'Што такое ананімная хвункцыя?',
+    level: 'junior',
+    topic: 'function'
+  },
+  {
+    text: 'Раскажыце пра стралковыя хвункцыі (arrow function). У чым складаюцца адменнасьці стралковых хвункцаў ад звычайных?',
+    level: 'junior',
+    topic: 'function'
+  },
+  {
+    text: 'Што такое й для чаго выкарыстоўваюць IIFE (Immediately Invoked Function Expression)?',
+    level: 'junior',
+    topic: 'function'
+  },
+  {
+    text: 'Што такое hoisting, як ён працуе для пераменных і хвункцый?',
+    level: 'junior',
+    topic: 'function'
+  },
+  {
+    text: 'Што такое зачыненьне (closure) і якія сцэнары яго выкарыстаньня?',
+    level: 'junior',
+    topic: 'function'
+  },
+  {
+    text: 'Як самі разумееце зачыненьне? Што мае быць выведзена ў кансолі ў гэтым выпадку?',
+    level: 'junior',
+    topic: 'function',
+    image: 'https://miro.medium.com/max/700/1*EMujCTinWFxMCdotX4a3Yw.png'
+  },
+  {
+    text: 'Што такое рэкурсія?',
+    level: 'junior',
+    topic: 'function'
+  },
+  {
+    text: 'Што азначае ключавое слова this?',
+    level: 'junior',
+    topic: 'function'
+  },
+  {
+    text: 'Што такое страта кантэксту, калі адбываецца й як яго пазьбегнуць?',
+    level: 'junior',
+    topic: 'function'
+  },
+  {
+    text: 'Мэтады хвункцый bind/call/apply — навошта і ў чым розьніца?',
+    level: 'junior',
+    topic: 'function'
+  },
+  {
+    text: 'Што такое DOM?',
+    level: 'junior',
+    topic: 'frontend'
+  },
+  {
+    text: 'Параўнайце атрыбуты падключэньня скрыпту async і defer у HTML-дакумэнце.',
+    level: 'junior',
+    topic: 'frontend'
+  },
+  {
+    text: 'Якая розьніца паміж уласьцівасьцямі HTML-элемэнтаў innerHTML і innerText?',
+    level: 'junior',
+    topic: 'frontend'
+  },
+  {
+    text: 'Апішыце працэс усплываньня (bubbling) падзеяў у DOM.',
+    level: 'junior',
+    topic: 'frontend'
+  },
+  {
+    text: 'Як спыніць усплываньне (bubbling) падзеі?',
+    level: 'junior',
+    topic: 'frontend'
+  },
+  {
+    text: 'Як спыніць дэхволтную апрацоўку падзеяў?',
+    level: 'junior',
+    topic: 'frontend'
+  },
+  {
+    text: 'Чаму ё роўным this у апрацоўшчыку падзей (event handler)?',
+    level: 'junior',
+    topic: 'frontend'
+  },
+  {
+    text: 'Што такое LocalStorage і SessionStorage? Які максымальны памер LocalStorage?',
+    level: 'junior',
+    topic: 'frontend'
+  },
+  {
+    text: 'Як атрымаць вышыню блёку? Яго стан адносна межаў дакумэнта?',
+    level: 'junior',
+    topic: 'frontend'
+  },
+  {
+    text: 'Што такое webpack?',
+    level: 'junior',
+    topic: 'frontend'
+  },
+  {
+    text: 'Чымся адрозьніваецца dev-зборка ад prod?',
+    level: 'junior',
+    topic: 'frontend'
+  },
+  {
+    text: 'Што такое блёкавая мадэль CSS?',
+    level: 'junior',
+    topic: 'design'
+  },
+  {
+    text: 'Якія спосабы цэнтраваньня блёкавага зьместу па гарызанталі ды вертыкалі самі знаеце?',
+    level: 'junior',
+    topic: 'design'
+  },
+  {
+    text: 'Якія падыходы ў вёрстцы вашэці вядомыя (float, flex, grid, etc.)?',
+    level: 'junior',
+    topic: 'design'
+  },
+  {
+    text: 'Як зрабіць дадатак responsive?',
+    level: 'junior',
+    topic: 'design'
+  },
+  {
+    text: 'Якія ёсьціка прынцыпы сэмантычнае вёрсткі?',
+    level: 'junior',
+    topic: 'design'
+  },
+  {
+    text: 'Навошта патрэбны прэхвіксы для некаторых CSS-уласьцівасьцяў (-webkit-, -moz- і г.д.)?',
+    level: 'junior',
+    topic: 'design'
+  },
+  {
+    text: 'Як спрасьціць напісаньне кросбраўзерных стыляў?',
+    level: 'junior',
+    topic: 'design'
+  },
+  {
+    text: 'Практычнае заданьне: пракамэнтаваць ды выправіць прыклад дрэннага CSS і HTML.',
+    level: 'junior',
+    topic: 'design'
+  },
+  {
+    text: 'Што такое CSS-прэпрацэсары? Зь якімі працавалі? Што новага яны прыносяць у стандартны CSS?',
+    level: 'junior',
+    topic: 'design'
+  },
+  {
+    text: 'Пералічыце асноўныя кампанэнты хрэймворку (модуль, роўт, дырэктыва і г.д.).',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'У чым розьніца паміж кампанэнтам і дырэктываю?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Раскажыце пра жыцьцёвы цыкл кампанэнта.',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Пералічыце хукі жыцьцёвага цыклу кампанэнта, якія часта выкарыстоўваюцца, ды раскажыце, для чаго яны патрэбны.',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'У чым розьніца паміж канструктарам і ngOnInint-хукам?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Як абараніць роўт ад несанкцанаванага доступу? Якія мэханізмы дае для гэтага хрэймворк?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Што такое Lazy loading, як і для чаго выкарыстоўваецца?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Якое прызначэньне RouterOutlet?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Як кампанэнты могуць узаемадзейнічаць адно з адным?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Як стварыць two-way binding уласьціывасьць для кампанэнта?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Якія тыпы хорм мае хрэймворк? У якіх выпадках і што лепш выкарыстоўваць?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Якія станы мае хорма і як гэта можна прыстасаваць?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Навошта патрэбны сэрвісы? Як зь імі працаваць?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Што такое singleton-сэрвісы? Якое іхняе прызначэньне? Спосаб стварэньня?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Якія ё спосабы абвяшчэньня сэрвісаў?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Для чаго патрэбны модулі? Колькі іх мае быць у праекце?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Навошта патрэбны агульныя модулі (shared)?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Якія перавагі тыпізацы ў TypeScript?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Якія магчымасьці TypeScript можна выкарыстоўваць для тыпізацы (тут маюць на ўвазе інтэрхвэйсы, тыпы, enum і г.д.)?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Якая розьніца паміж інтэрхвэйсам і клясай?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'У чым розьніца паміж інтэрхвэйсам і абстрактнай клясай?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Якая розьніца паміж інтэрхвэйсам і тыпам?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Што такое RxJS? Як ён выкарыстоўваецца ў хрэймворку? Якія кампанэнты хрэймворку шчыльна зьвязаныя зь ім?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Чым адрозьніваюцца Observable і Pomise?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Для чаго патрэбны Subjects? Якія тыпы Subjects існуюць?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Як зрабіць некалькі пасьлядоўных запытаў да API з дапамогай HTTP-сэрвісу й RxJS?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Якія розьніца паміж switchMap, concatMap, mergeMap?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Як можна канхвігураваць Angular-дастасаваньне?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Навошта патрэбны environment-хвайлы? Калі іх лепш не выкарыстоўваць?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'У чым розьніца паміж “разумным” (smart) і “дурным” (dumb) кампанэнтамі? У якіх выпадках прыстасоўваецца кожны зь іх?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'У чым розьніца паміж NgForm, FormGroup і FormControl і як іх прыстасоўваюць для пабудовы хорм?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Навошта патрэбен і як працуе async pipe?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Як сачыць за разьвіцьцём хрэймворку? Якіх вядомых людзей, зьвязаных з Angular, самі знаеце/чытаеце?',
+    level: 'junior',
+    topic: 'angular'
+  },
+  {
+    text: 'Ці працавалі з клясавымі кампанэнтамі? У чым іхняя асаблівасьць?',
+    level: 'junior',
+    topic: 'react'
+  },
+  {
+    text: 'Якія дадзеныя лепш зьберагаць у стане кампанэнта, а якія перадаваь цераз пропсы? Прывядзіце прыклад.',
+    level: 'junior',
+    topic: 'react'
+  },
+  {
+    text: 'Ці знаёмыя з хукамі? У чым іхнія перавагі? Ці даводзілася рабіць свае і зь якой мэтай?',
+    level: 'junior',
+    topic: 'react'
+  },
+  {
+    text: 'Ці знаёмыя з храгмэнтамі ды парталамі? Навошта яны патрэбны?',
+    level: 'junior',
+    topic: 'react'
+  },
+  {
+    text: 'Калі й для чаго выкарыстоўваюць рэхвы?',
+    level: 'junior',
+    topic: 'react'
+  },
+  {
+    text: 'Якія самі знаеце мэтады жыцьцёвага цыклу кампанэнта?',
+    level: 'junior',
+    topic: 'react'
+  },
+  {
+    text: 'У якім мэтадзе жыцьцёвага цыклу кампанэнта лепш рабіць запыты на сэрвер? Чаму?',
+    level: 'junior',
+    topic: 'react'
+  },
+  {
+    text: 'У якім мэтадзе жыцьцёвага цыклу кампанэнта лепш рабіць падпіску й адпіску ад лісэнэра? Чаму? Навошта адпісвацца?',
+    level: 'junior',
+    topic: 'react'
+  },
+  {
+    text: 'Ці мелі досьвед работы з кантэкстам? Калі яго варта выкарыстоўваць?',
+    level: 'junior',
+    topic: 'react'
+  },
+  {
+    text: 'У чым асаблівасьць PureComponent?',
+    level: 'junior',
+    topic: 'react'
+  },
+  {
+    text: 'Ці працаваў з мэмаізаванымі сэлектарамі (memoized selectors)? Для чаго іх выкарыстоўваюць і які прынцып работы?',
+    level: 'junior',
+    topic: 'react'
+  },
+  {
+    text: 'У чым бачыце перавагі бібліятэкі React?',
+    level: 'junior',
+    topic: 'react'
+  },
+  {
+    text: 'Чаму бібліятэка React ё хуткай? Што такое Virtual DOM і Shadow DOM?',
+    level: 'junior',
+    topic: 'react'
+  },
+  {
+    text: 'Навошта ў сьпісах ёсьць ключы? Ці можна рабіць ключамі індэксы элемэнтаў масіву? Калі гэта ёсьцека апраўданым?',
+    level: 'junior',
+    topic: 'react'
+  },
+  {
+    text: 'У чым асноўная ідэя Redux?',
+    level: 'junior',
+    topic: 'react'
+  },
+  {
+    text: 'Работа са стылямі ў React.',
+    level: 'junior',
+    topic: 'react'
+  },
+  {
+    text: 'React — гэта бібліятэка ці хрэймворк? Якая розьніца паміж гэтымі дзьвюма паняткамі?',
+    level: 'junior',
+    topic: 'react'
+  },
+  {
+    text: 'Ці можна выкарыстоўваць jQuery разам з React? Чому так/не?',
+    level: 'junior',
+    topic: 'react'
+  },
+  {
+    text: 'Што такое codemod?',
+    level: 'junior',
+    topic: 'react'
+  },
+  {
+    text: 'Ці даводзілася наладжваць праект React з нуля? З дапамогай якіх інструмэнтаў самі гэта рабілі?',
+    level: 'junior',
+    topic: 'react'
+  },
+  {
+    text: 'Пералічыце ўсе бібліятэкі, якія выкарыстоўвалі ў зьвязку з React.',
+    level: 'junior',
+    topic: 'react'
+  },
+  {
+    text: 'Што наскладнейшае даводзілася реалізоўваць з дапамогай React?',
+    level: 'junior',
+    topic: 'react'
+  },
+  {
+    text: 'Што такое REPL?',
+    level: 'junior',
+    topic: 'backend'
+  },
+  {
+    text: 'Што такое streams у Node.js?',
+    level: 'junior',
+    topic: 'backend'
+  },
+  {
+    text: 'Што такое middleware?',
+    level: 'junior',
+    topic: 'backend'
+  },
+  {
+    text: 'Для чаго выкарыстоўваюць хвункцыю setImmediate?',
+    level: 'junior',
+    topic: 'backend'
+  },
+  {
+    text: 'Навошта патрэбен app.param() у express?',
+    level: 'junior',
+    topic: 'backend'
+  },
+  {
+    text: 'Што такое token based authentication?',
+    level: 'junior',
+    topic: 'backend'
+  },
+  {
+    text: 'Напішыце просты запыт для вылічэньня трох аўтараў, што маюць найбольш кнігаў.',
+    level: 'junior',
+    topic: 'database'
+  },
+  {
+    text: 'Напішыце запыт, які абірае апошнія тры камэнтары для канкрэтнага карыстальніка для дзьвух табліцаў: камэнтары ды карыстальнікі.',
+    level: 'junior',
+    topic: 'database'
+  },
+  {
+    text: 'Спраектуйце простую схему базы дадзеных для бібліятэкі.',
+    level: 'junior',
+    topic: 'database'
+  },
+  {
+    text: 'Для чаго выкарыстоўваюць SQL-апэратар HAVING?',
+    level: 'junior',
+    topic: 'database'
+  },
+  {
+    text: 'Навошта выкарыстоўваюць SQL-апэратар LEFT JOIN?',
+    level: 'junior',
+    topic: 'database'
+  },
+  {
+    text: 'Чым адрозьніваецца embed- ад reference-сувязі ў MongoDB?',
+    level: 'junior',
+    topic: 'database'
+  },
+  {
+    text: 'У адным праекце праграмісты захоўваюць дадзеныя ў MongoDB-калекцыі камэнтароў, выкарыстоўваючы такія тыпы дадзеных (глядзіце ніжэй). Што кепскага ў гэтым рашэньні?',
+    level: 'junior',
+    topic: 'database',
+    image: 'https://miro.medium.com/max/700/1*jqO-cZDUa2fM_OSbhpRJUA.png'
+  },
+  {
+    text: 'У праекце спатрэбілася ўнесьці зьмены ў структуру табліцаў, дадаць некалькі палёў і індэксаў. Як праграмісты рабіцьмуць гэта на прадакшэне?',
+    level: 'junior',
+    topic: 'database'
+  },
+  {
+    text: 'Штораз, калі самі робіце pull, чамусьці трапляецца канхвлікт у апошнім радку ва ўсіх хвайлах, якія самі рэдагавалі. Што адбываецца?',
+    level: 'junior',
+    topic: 'tools'
+  },
+  {
+    text: 'Што робіць каманда git fetch?',
+    level: 'junior',
+    topic: 'tools'
+  },
+  {
+    text: 'Якія git hygiene падыходы самі знаеце?',
+    level: 'junior',
+    topic: 'tools'
+  },
+  {
+    text: 'Што такое CI/CD? Для чаго гэта патрэбна?',
+    level: 'junior',
+    topic: 'tools'
+  },
+  {
+    text: 'Раскажыце, якія ёсьціка спосабы капіяваньня простага аб’екту накшталт obj ={a:1, b:2, c:3}',
+    level: 'junior',
+    topic: 'practice'
+  },
+  {
+    text: 'Напішыце deep clone для аб’екта.',
+    level: 'junior',
+    topic: 'practice'
+  },
+  {
+    text: 'Назавіце розныя спосабы, як памяняць мейсцамі значэньні дзьвух пераменных.',
+    level: 'junior',
+    topic: 'practice'
+  },
+  {
+    text: 'Мэнэджэр папрасіў у задачы памяняць статусы з “active, inactive” на “active, removed”, але ў кодзе хвігуруюць тыкеля лічбы й незразумела, які статус адпавядае якой лічбе. Як дапамагчы будучым праграмістам ня лезьці ў дакумэнтацыю з кодам? Пытаньне ставяць на канкрэтным прыкладзе з кодам.',
+    level: 'junior',
+    topic: 'practice'
+  },
+  {
+    text: 'Неабходна зрабіць мініпраект — сьпіс карыстальнікаў з хвормай стварэньня/рэдагаваньня карыстальніка:',
+    level: 'junior',
+    topic: 'practice',
+    items: [
+      'Для зьбераганьня карыстальнікаў выкарыстоўвайце Firebase (гэта бескаштоўна).',
+      'Для стылізацы выкарыстоўвайце Bootstrap.',
+      'Мінімальны набор палёў карыстальніка: імя; прозьвішча; электронная пошта; ціліхвон (у хвармаце +375(ХХ)ХХХ-ХХ-ХХ); дата нараджэньня; будзе плюсам — дадаваньне аватара ды магчымасьць crop-карцінкі.',
+      'Карыстальнікі павінны мець магчымасьць хвільтрацы ды пагінацы.',
+      'Праект мае зьмяшчаць README-хвайл з крокамі для запуску.'
+    ]
+  }
+]
+
 export const QuestionsPage = () => {
+  let juniorCounter = 0;
+
+  const renderQuestions = (selectedLevel, selectedTopic) => {
+    return (
+      questions
+        .filter(({ level, topic }) => (level === selectedLevel && topic === selectedTopic))
+        .map(({ text, image, items }) => {
+          juniorCounter += 1;
+
+          return (
+            <>
+              <p>{juniorCounter}. {text}</p>
+              {
+                image && (
+                  <figure>
+                    <div role="button" tabindex="0">
+                      <div>
+                        <img alt="" src={image} loading="lazy" role="presentation"/>
+                      </div>
+                    </div>
+                  </figure>
+                )
+              }
+              {
+                items && (
+                  <ul>
+                    {
+                      items.map((item, index) => {
+                        return <li>{item}</li>
+                      })
+                    }
+                  </ul>
+                )
+              }
+            </>
+          )
+        }
+      )
+    )
+  }
+
+  const toggle = (level, topic) => {
+  }
+
   return (
     <div className='QuestionsPage'>
       <div>
@@ -19,367 +772,52 @@ export const QuestionsPage = () => {
         <p>Гэтым разам прапануем азнаёміцца з актуальнымі пытаньнямі, якія ставяць на тэхнічных інтэрв’ю па JavaScript. Натуральна, мы гаворым пра шырокі спэктар спэцалізацаў, а таму абірайце свой напрамак ды рыхтуйцеся.
         </p>
         <h1>
-        <strong>Junior
-        </strong>
+        <strong>Junior</strong>
         </h1>
-        <p>
-          <strong>Агульныя:
-          </strong>
-        </p>
-        <p>1. Якія мэтады HTTP-запытаў самі знаеце?
-        </p>
-        <p>2. Якія вэрсіі HTTP-пратаколу вашэці вядомы?
-        </p>
-        <p>3. Якія знаеце коды адказу (стану) HTTP?
-        </p>
-        <p>4. Што такое Cross-Origin Resource Sharing? Як пазбавіцца праблем з CORS?
-        </p>
-        <p>5. Што такое cookie?
-        </p>
-        <p>6. Які максымальны памер cookie?
-        </p>
-        <p>7. Што азначае дырэктыва use strict?
-        </p>
-        <p>8. Чым JS адрозьніваецца падчас работы на front-end і back-end?
-        </p>
-        <p>9. Што такое статычная і дынамічная тыпізацыі?
-        </p>
-        <p>10. Як кліент узаемадзейнічае з сэрвэрам?
-        </p>
-        <p>11. Што такое REST?
-        </p>
-        <p>12. Патлумачце паняцьце мутабэльнасьць/імутабэльнасьць? Якія тыпы ёсьцека мутабэльнымі й наадварот?
-        </p>
-        <p>13. Як шукаць памылкі ў кодзе? Ці выкарыстоўваеце дэбагер?
-        </p>
-        <p>14. Якіх вядомых людзей са сьвету JS знаеце?
-        </p>
-        <p>
-          <strong>JS Core:
-          </strong>
-        </p>
-        <p>15. Якія тыпы дадзеных існуюць у JS?
-        </p>
-        <p>16. Як праверыць, ці аб’ект ёсьцека масівам?
-        </p>
-        <p>17. Як праверыць, ці лік ё скончаным?
-        </p>
-        <p>18. Як праверыць, што пераменная роўная NaN?
-        </p>
-        <p>19. Чым адрозьніваюцца паводзіны isNaN() і Number.isNaN()?
-        </p>
-        <p>20. Параўнайце ключавыя словы var, let, const.
-        </p>
-        <p>21. Што такое вобласьць бачнасьці?
-        </p>
-        <p>22. Што такое дэструктурызаца?
-        </p>
-        <p>23. Для чаго прызначаны мэтады setTimeout і setInterval?
-        </p>
-        <p>24. Параўнайце падыходы работы з асінхроным кодам: callbacks vs promises vs async/await.
-        </p>
-        <p>25. Ці можна запісваць новыя ўласьцівасьці/хвункцыі ў прататыпы стандартных клясаў (Array, Object і г.д.)? Чаму не?
-        </p>
-        <p>26. Назавіце мэтады масіваў, якія памятаеце, і скажыце, для чаго яны патрэбны.
-        </p>
-        <p>27. Якія мэтады перабіраньня масіву знаеце? У чым іх адменнасьць?
-        </p>
-        <p>28. Як працуюць апэратары прысвойваньня/параўнаньня/радковыя/арыхмэтычныя/бітавыя і г.д.?
-        </p>
-        <p>29. Апішыце прызначэньне й прынцыпы работы з калекцамі Map і Set.
-        </p>
-        <p>30. Што азначае глыбокая (deep) і павярхоўная (shallow) копія аб’екта? Як зрабіць кожную зь іх?
-        </p>
-        <p>
-          <strong>Хвункцыі:
-          </strong>
-        </p>
-        <p>31. Якая розьніца паміж абвяшчэньнем хвункцыі (function declaration) ды хвункцанальным выразам?
-        </p>
-        <p>32. Што такое ананімная хвункцыя?
-        </p>
-        <p>33. Раскажыце пра стралковыя хвункцыі (arrow function). У чым складаюцца адменнасьці стралковых хвункцаў ад звычайных?
-        </p>
-        <p>34. Што такое й для чаго выкарыстоўваюць IIFE (Immediately Invoked Function Expression)?
-        </p>
-        <p>35. Што такое hoisting, як ён працуе для пераменных і хвункцый?
-        </p>
-        <p>36. Што такое зачыненьне (closure) і якія сцэнары яго выкарыстаньня?
-        </p>
-        <p>37. Як самі разумееце зачыненьне? Што мае быць выведзена ў кансолі ў гэтым выпадку?
-        </p>
-        <figure>
-          <div role="button" tabindex="0">
-            <div>
-        <img alt="" class="cf tb tc" src="https://miro.medium.com/max/700/1*EMujCTinWFxMCdotX4a3Yw.png" width="700" height="188" loading="lazy" role="presentation"/>            </div>
-          </div>
-        </figure>
-        <p>38. Што такое рэкурсія?
-        </p>
-        <p>39. Што азначае ключавое слова this?
-        </p>
-        <p>40. Што такое страта кантэксту, калі адбываецца й як яго пазьбегнуць?
-        </p>
-        <p>41. Мэтады хвункцый bind/call/apply — навошта і ў чым розьніца?
-        </p>
-        <p>
-          <strong>Front-end:
-          </strong>
-        </p>
-        <p>42. Што такое DOM?
-        </p>
-        <p>43. Параўнайце атрыбуты падключэньня скрыпту async і defer у HTML-дакумэнце.
-        </p>
-        <p>44. Якая розьніца паміж уласьцівасьцямі HTML-элемэнтаў innerHTML і innerText?
-        </p>
-        <p>45. Апішыце працэс усплываньня (bubbling) падзеяў у DOM.
-        </p>
-        <p>46. Як спыніць усплываньне (bubbling) падзеі?
-        </p>
-        <p>47. Як спыніць дэхволтную апрацоўку падзеяў?
-        </p>
-        <p>48. Чаму ё роўным this у апрацоўшчыку падзей (event handler)?
-        </p>
-        <p>49. Што такое LocalStorage і SessionStorage? Які максымальны памер LocalStorage?
-        </p>
-        <p>50. Як атрымаць вышыню блёку? Яго стан адносна межаў дакумэнта?
-        </p>
-        <p>51. Што такое webpack?
-        </p>
-        <p>52. Чымся адрозьніваецца dev-зборка ад prod?
-        </p>
-        <p>
-          <strong>Вёрстка:
-          </strong>
-        </p>
-        <p>53. Што такое блёкавая мадэль CSS?
-        </p>
-        <p>54. Якія спосабы цэнтраваньня блёкавага зьместу па гарызанталі ды вертыкалі самі знаеце?
-        </p>
-        <p>55. Якія падыходы ў вёрстцы вашэці вядомыя (float, flex, grid, etc.)?
-        </p>
-        <p>56. Як зрабіць дадатак responsive?
-        </p>
-        <p>57. Якія ёсьціка прынцыпы сэмантычнае вёрсткі?
-        </p>
-        <p>58. Навошта патрэбны прэхвіксы для некаторых CSS-уласьцівасьцяў (-webkit-, -moz- і г.д.)?
-        </p>
-        <p>59. Як спрасьціць напісаньне кросбраўзерных стыляў?
-        </p>
-        <p>60. Практычнае заданьне: пракамэнтаваць ды выправіць прыклад дрэннага CSS і HTML.
-        </p>
-        <p>61. Што такое CSS-прэпрацэсары? Зь якімі працавалі? Што новага яны прыносяць у стандартны CSS?
-        </p>
-        <p>
-          <strong>Angular:
-          </strong>
-        </p>
-        <p>62. Пералічыце асноўныя кампанэнты хрэймворку (модуль, роўт, дырэктыва і г.д.).
-        </p>
-        <p>63. У чым розьніца паміж кампанэнтам і дырэктываю?
-        </p>
-        <p>64. Раскажыце пра жыцьцёвы цыкл кампанэнта.
-        </p>
-        <p>65. Пералічыце хукі жыцьцёвага цыклу кампанэнта, якія часта выкарыстоўваюцца, ды раскажыце, для чаго яны патрэбны.
-        </p>
-        <p>66. У чым розьніца паміж канструктарам і ngOnInint-хукам?
-        </p>
-        <p>67. Як абараніць роўт ад несанкцанаванага доступу? Якія мэханізмы дае для гэтага хрэймворк?
-        </p>
-        <p>68. Што такое Lazy loading, як і для чаго выкарыстоўваецца?
-        </p>
-        <p>69. Якое прызначэньне RouterOutlet?
-        </p>
-        <p>70. Як кампанэнты могуць узаемадзейнічаць адно з адным?
-        </p>
-        <p>71. Як стварыць two-way binding уласьціывасьць для кампанэнта?
-        </p>
-        <p>72. Якія тыпы хорм мае хрэймворк? У якіх выпадках і што лепш выкарыстоўваць?
-        </p>
-        <p>73. Якія станы мае хорма і як гэта можна прыстасаваць?
-        </p>
-        <p>74. Навошта патрэбны сэрвісы? Як зь імі працаваць?
-        </p>
-        <p>75. Што такое singleton-сэрвісы? Якое іхняе прызначэньне? Спосаб стварэньня?
-        </p>
-        <p>76. Якія ё спосабы абвяшчэньня сэрвісаў?
-        </p>
-        <p>77. Для чаго патрэбны модулі? Колькі іх мае быць у праекце?
-        </p>
-        <p>78. Навошта патрэбны агульныя модулі (shared)?
-        </p>
-        <p>79. Якія перавагі тыпізацы ў TypeScript?
-        </p>
-        <p>80. Якія магчымасьці TypeScript можна выкарыстоўваць для тыпізацы (тут маюць на ўвазе інтэрхвэйсы, тыпы, enum і г.д.)?
-        </p>
-        <p>81. Якая розьніца паміж інтэрхвэйсам і клясай?
-        </p>
-        <p>82. У чым розьніца паміж інтэрхвэйсам і абстрактнай клясай?
-        </p>
-        <p>83. Якая розьніца паміж інтэрхвэйсам і тыпам?
-        </p>
-        <p>84. Што такое RxJS? Як ён выкарыстоўваецца ў хрэймворку? Якія кампанэнты хрэймворку шчыльна зьвязаныя зь ім?
-        </p>
-        <p>85. Чым адрозьніваюцца Observable і Pomise?
-        </p>
-        <p>86. Для чаго патрэбны Subjects? Якія тыпы Subjects існуюць?
-        </p>
-        <p>87. Як зрабіць некалькі пасьлядоўных запытаў да API з дапамогай HTTP-сэрвісу й RxJS?
-        </p>
-        <p>88. Якія розьніца паміж switchMap, concatMap, mergeMap?
-        </p>
-        <p>89. Як можна канхвігураваць Angular-дастасаваньне?
-        </p>
-        <p>90. Навошта патрэбны environment-хвайлы? Калі іх лепш не выкарыстоўваць?
-        </p>
-        <p>91. У чым розьніца паміж “разумным” (smart) і “дурным” (dumb) кампанэнтамі? У якіх выпадках прыстасоўваецца кожны зь іх?
-        </p>
-        <p>92. У чым розьніца паміж NgForm, FormGroup і FormControl і як іх прыстасоўваюць для пабудовы хорм?
-        </p>
-        <p>93. Навошта патрэбен і як працуе async pipe?
-        </p>
-        <p>94. Як сачыць за разьвіцьцём хрэймворку? Якіх вядомых людзей, зьвязаных з Angular, самі знаеце/чытаеце?
-        </p>
-        <p>
-          <strong>React:
-          </strong>
-        </p>
-        <p>95. Ці працавалі з клясавымі кампанэнтамі? У чым іхняя асаблівасьць?
-        </p>
-        <p>96. Якія дадзеныя лепш зьберагаць у стане кампанэнта, а якія перадаваь цераз пропсы? Прывядзіце прыклад.
-        </p>
-        <p>97. Ці знаёмыя з хукамі? У чым іхнія перавагі? Ці даводзілася рабіць свае і зь якой мэтай?
-        </p>
-        <p>98. Ці знаёмыя з храгмэнтамі ды парталамі? Навошта яны патрэбны?
-        </p>
-        <p>99. Калі й для чаго выкарыстоўваюць рэхвы?
-        </p>
-        <p>100. Якія самі знаеце мэтады жыцьцёвага цыклу кампанэнта?
-        </p>
-        <p>101. У якім мэтадзе жыцьцёвага цыклу кампанэнта лепш рабіць запыты на сэрвер? Чаму?
-        </p>
-        <p>102. У якім мэтадзе жыцьцёвага цыклу кампанэнта лепш рабіць падпіску й адпіску ад лісэнэра? Чаму? Навошта адпісвацца?
-        </p>
-        <p>103. Ці мелі досьвед работы з кантэкстам? Калі яго варта выкарыстоўваць?
-        </p>
-        <p>104. У чым асаблівасьць PureComponent?
-        </p>
-        <p>105. Ці працаваў з мэмаізаванымі сэлектарамі (memoized selectors)? Для чаго іх выкарыстоўваюць і які прынцып работы?
-        </p>
-        <p>106. У чым бачыце перавагі бібліятэкі React?
-        </p>
-        <p>107. Чаму бібліятэка React ё хуткай? Што такое Virtual DOM і Shadow DOM?
-        </p>
-        <p>108. Навошта ў сьпісах ёсьць ключы? Ці можна рабіць ключамі індэксы элемэнтаў масіву? Калі гэта ёсьцека апраўданым?
-        </p>
-        <p>109. У чым асноўная ідэя Redux?
-        </p>
-        <p>110. Работа са стылямі ў React.
-        </p>
-        <p>111. React — гэта бібліятэка ці хрэймворк? Якая розьніца паміж гэтымі дзьвюма паняткамі?
-        </p>
-        <p>112. Ці можна выкарыстоўваць jQuery разам з React? Чому так/не?
-        </p>
-        <p>113. Што такое codemod?
-        </p>
-        <p>114. Ці даводзілася наладжваць праект React з нуля? З дапамогай якіх інструмэнтаў самі гэта рабілі?
-        </p>
-        <p>115. Пералічыце ўсе бібліятэкі, якія выкарыстоўвалі ў зьвязку з React.
-        </p>
-        <p>116. Што наскладнейшае даводзілася реалізоўваць з дапамогай React?
-        </p>
-        <p>
-          <strong>Back-end:
-          </strong>
-        </p>
-        <p>117. Што такое REPL?
-        </p>
-        <p>118. Што такое streams у Node.js?
-        </p>
-        <p>119. Што такое middleware?
-        </p>
-        <p>120. Для чаго выкарыстоўваюць хвункцыю setImmediate?
-        </p>
-        <p>121. Навошта патрэбен app.param() у express?
-        </p>
-        <p>122. Што такое token based authentication?
-        </p>
-        <p>
-          <strong>Базы дадзеных:
-          </strong>
-        </p>
-        <p>123. Напішыце просты запыт для вылічэньня трох аўтараў, што маюць найбольш кнігаў.
-        </p>
-        <p>124. Напішыце запыт, які абірае апошнія тры камэнтары для канкрэтнага карыстальніка для дзьвух табліцаў: камэнтары ды карыстальнікі.
-        </p>
-        <p>125. Спраектуйце простую схему базы дадзеных для бібліятэкі.
-        </p>
-        <p>126. Для чаго выкарыстоўваюць SQL-апэратар HAVING?
-        </p>
-        <p>127. Навошта выкарыстоўваюць SQL-апэратар LEFT JOIN?
-        </p>
-        <p>128. Чым адрозьніваецца embed- ад reference-сувязі ў MongoDB?
-        </p>
-        <p>129. У адным праекце праграмісты захоўваюць дадзеныя ў MongoDB-калекцыі камэнтароў, выкарыстоўваючы такія тыпы дадзеных (глядзіце ніжэй). Што кепскага ў гэтым рашэньні?
-        </p>
-        <figure>
-          <div role="button" tabindex="0">
-            <div>
-        <img alt="" class="cf tb tc" src="https://miro.medium.com/max/700/1*jqO-cZDUa2fM_OSbhpRJUA.png" width="700" height="58" loading="lazy" role="presentation"/>            </div>
-          </div>
-        </figure>
-        <p>130. У праекце спатрэбілася ўнесьці зьмены ў структуру табліцаў, дадаць некалькі палёў і індэксаў. Як праграмісты рабіцьмуць гэта на прадакшэне?
-        </p>
-        <p>
-          <strong>Інструмэнты:
-          </strong>
-        </p>
-        <p>131. Штораз, калі самі робіце pull, чамусьці трапляецца канхвлікт у апошнім радку ва ўсіх хвайлах, якія самі рэдагавалі. Што адбываецца?
-        </p>
-        <p>132. Што робіць каманда git fetch?
-        </p>
-        <p>133. Якія git hygiene падыходы самі знаеце?
-        </p>
-        <p>134. Што такое CI/CD? Для чаго гэта патрэбна?
-        </p>
-        <p>
-          <strong>Практычныя зданьні:
-          </strong>
-        </p>
-        <p>135. Раскажыце, якія ёсьціка спосабы капіяваньня простага аб’екту накшталт obj ='{'a:1, b:2, c:3'}'
-        </p>
-        <p>136. Напішыце deep clone для аб’екта.
-        </p>
-        <p>137. Назавіце розныя спосабы, як памяняць мейсцамі значэньні дзьвух пераменных.
-        </p>
-        <p>138. Мэнэджэр папрасіў у задачы памяняць статусы з “active, inactive” на “active, removed”, але ў кодзе хвігуруюць тыкеля лічбы й незразумела, які статус адпавядае якой лічбе. Як дапамагчы будучым праграмістам ня лезьці ў дакумэнтацыю з кодам? Пытаньне ставяць на канкрэтным прыкладзе з кодам.
-        </p>
-        <p>139. Неабходна зрабіць мініпраект — сьпіс карыстальнікаў з хвормай стварэньня/рэдагаваньня карыстальніка:
-        </p>
-        <p>1. Для зьбераганьня карыстальнікаў выкарыстоўвайце Firebase (гэта бескаштоўна).
-        </p>
-        <p>2. Для стылізацы выкарыстоўвайце Bootstrap.
-        </p>
-        <p>3. Мінімальны набор палёў карыстальніка:
-        </p>
-        <ul>
-          <li>імя;
-          </li>
-          <li>прозьвішча;
-          </li>
-          <li>электронная пошта;
-          </li>
-          <li>ціліхвон (у хвармаце +375(ХХ)ХХХ-ХХ-ХХ);
-          </li>
-          <li>дата нараджэньня;
-          </li>
-          <li>будзе плюсам — дадаваньне аватара ды магчымасьць crop-карцінкі.
-          </li>
-        </ul>
-        <p>4. Карыстальнікі павінны мець магчымасьць хвільтрацы ды пагінацы.
-        </p>
-        <p>5. Праект мае зьмяшчаць README-хвайл з крокамі для запуску.
-        </p>
+        <h2 onClick={toggle('junior', 'general')}>Агульныя</h2>
+        {
+          renderQuestions('junior', 'general')
+        }
+        <h2 onClick={toggle('junior', 'core')}>JS Core</h2>
+        {
+          renderQuestions('junior', 'core')
+        }
+        <h2 onClick={toggle('junior', 'function')}>Хвункцыі</h2>
+        {
+          renderQuestions('junior', 'function')
+        }
+        <h2 onClick={toggle('junior', 'frontend')}>Front-end</h2>
+        {
+          renderQuestions('junior', 'frontend')
+        }
+        <h2 onClick={toggle('junior', 'design')}>Вёрстка</h2>
+        {
+          renderQuestions('junior', 'design')
+        }
+        <h2 onClick={toggle('junior', 'angular')}>Angular</h2>
+        {
+          renderQuestions('junior', 'angular')
+        }
+        <h2 onClick={toggle('junior', 'react')}>React</h2>
+        {
+          renderQuestions('junior', 'react')
+        }
+        <h2 onClick={toggle('junior', 'backend')}>Back-end</h2>
+        {
+          renderQuestions('junior', 'backend')
+        }
+        <h2 onClick={toggle('junior', 'database')}>Базы дадзеных</h2>
+        {
+          renderQuestions('junior', 'database')
+        }
+        <h2 onClick={toggle('junior', 'tools')}>Інструмэнты</h2>
+        {
+          renderQuestions('junior', 'tools')
+        }
+        <h2 onClick={toggle('junior', 'practice')}>Практычныя зданьні</h2>
+        {
+          renderQuestions('junior', 'practice')
+        }
         <h1>Middle
         </h1>
         <p>
@@ -415,7 +853,8 @@ export const QuestionsPage = () => {
         <figure>
           <div role="button" tabindex="0">
             <div>
-        <img alt="" class="cf tb tc" src="https://miro.medium.com/max/700/1*nIT9PmNvX9nhFCQkqbZ_yA.png" width="700" height="104" loading="lazy" role="presentation"/>            </div>
+              <img alt="" class="cf tb tc" src="https://miro.medium.com/max/700/1*nIT9PmNvX9nhFCQkqbZ_yA.png" width="700" height="104" loading="lazy" role="presentation"/>
+            </div>
           </div>
         </figure>
         <p>11. Што такое temporal dead zone?
@@ -433,7 +872,8 @@ export const QuestionsPage = () => {
         <figure>
           <div role="button" tabindex="0">
             <div>
-        <img alt="" class="cf tb tc" src="https://miro.medium.com/max/700/1*j7DlPpnoxcGzLMl-nLkF3g.png" width="700" height="102" loading="lazy" role="presentation"/>            </div>
+              <img alt="" class="cf tb tc" src="https://miro.medium.com/max/700/1*j7DlPpnoxcGzLMl-nLkF3g.png" width="700" height="102" loading="lazy" role="presentation"/>
+            </div>
           </div>
         </figure>
         <p>16. Якая розьніца паміж кампазыцай ды спадкаемствам?
@@ -457,7 +897,8 @@ export const QuestionsPage = () => {
         <figure>
           <div role="button" tabindex="0">
             <div>
-        <img alt="" class="cf tb tc" src="https://miro.medium.com/max/700/1*zHobkFTtoj8nWtsF-uSQ6w.png" width="700" height="51" loading="lazy" role="presentation"/>            </div>
+              <img alt="" class="cf tb tc" src="https://miro.medium.com/max/700/1*zHobkFTtoj8nWtsF-uSQ6w.png" width="700" height="51" loading="lazy" role="presentation"/>
+            </div>
           </div>
         </figure>
         <p>25. Што такое Garbage Collector?
@@ -475,7 +916,8 @@ export const QuestionsPage = () => {
         <figure>
           <div role="button" tabindex="0">
             <div>
-        <img alt="" class="cf tb tc" src="https://miro.medium.com/max/700/1*A-pP0zLlw0DCRsQIzub-Tw.png" width="700" height="274" loading="lazy" role="presentation"/>            </div>
+              <img alt="" class="cf tb tc" src="https://miro.medium.com/max/700/1*A-pP0zLlw0DCRsQIzub-Tw.png" width="700" height="274" loading="lazy" role="presentation"/>
+            </div>
           </div>
         </figure>
         <p>30. Раскажыце пра пасьлядоўнае й паралельнае выкананьне асінхронных хвункцаў. У чым розьніца паміж Promise.all() і Promise.allSettled()?
@@ -493,7 +935,8 @@ export const QuestionsPage = () => {
         <figure>
           <div role="button" tabindex="0">
             <div>
-        <img alt="" class="cf tb tc" src="https://miro.medium.com/max/700/1*-_T6yFkiCooUAcNoRt0EFg.png" width="700" height="36" loading="lazy" role="presentation"/>            </div>
+              <img alt="" class="cf tb tc" src="https://miro.medium.com/max/700/1*-_T6yFkiCooUAcNoRt0EFg.png" width="700" height="36" loading="lazy" role="presentation"/>
+            </div>
           </div>
         </figure>
         <p>36. Якім будзе рэзультат параўнаньня?
@@ -501,7 +944,8 @@ export const QuestionsPage = () => {
         <figure>
           <div role="button" tabindex="0">
             <div>
-        <img alt="" class="cf tb tc" src="https://miro.medium.com/max/700/1*H17vJMpy2cG4SGzA8U2kwA.png" width="700" height="32" loading="lazy" role="presentation"/>            </div>
+              <img alt="" class="cf tb tc" src="https://miro.medium.com/max/700/1*H17vJMpy2cG4SGzA8U2kwA.png" width="700" height="32" loading="lazy" role="presentation"/>
+            </div>
           </div>
         </figure>
         <p>37. Раскажыце пра генератары ды ітэратары.
@@ -511,7 +955,8 @@ export const QuestionsPage = () => {
         <figure>
           <div role="button" tabindex="0">
             <div>
-        <img alt="" class="cf tb tc" src="https://miro.medium.com/max/700/1*7lVN4_q5TI5sKu0ko9ZRrw.png" width="700" height="120" loading="lazy" role="presentation"/>            </div>
+              <img alt="" class="cf tb tc" src="https://miro.medium.com/max/700/1*7lVN4_q5TI5sKu0ko9ZRrw.png" width="700" height="120" loading="lazy" role="presentation"/>
+            </div>
           </div>
         </figure>
         <p>39. Раскажыце пра тып дадзеных Symbol і яго практычнае дастасаваньне. Як перавесьці лік зь 10-разраднай сыстэмы ў 16(2,8)-разрадную сыстэму зьлічэньня?
