@@ -6,12 +6,6 @@ export const QuestionsPage = () => {
           <h1>Сумоўе па JavaScript. 300+ пытаньняў для Junior, Middle, Senior
           </h1>
         </div>
-        <figure>
-          <div role="button" tabindex="0">
-            <div>
-        <img alt="" class="cf tb tc" src="https://miro.medium.com/max/700/1*p_pYU9sqocwFM22t5BsIMg.png" width="700" height="700" loading="lazy" role="presentation"/>            </div>
-          </div>
-        </figure>
         <p>
           <em>Шаноўныя сябры! Прапаную вашэцевай увазе пераклад артыкула, апублікаванага на DOU.ua 21 сьнежня 2021 года. Арыгінальная вэрсія на ўкрінскай мове ё даступнай
           </em>
