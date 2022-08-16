@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "pytanni"
-  }
+  },
+  "targets": {
+    "pytanni": {
+      "hosting": {
+        "prod": [
+          "pytanni"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
