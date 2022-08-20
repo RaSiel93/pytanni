@@ -973,7 +973,544 @@ const questions = [
     text: 'Раскажыце пра тып дадзеных Symbol і яго практычнае дастасаваньне. Як перавесьці лік зь 10-разраднай сыстэмы ў 16(2,8)-разрадную сыстэму зьлічэньня?',
     level: 'middle',
     topic: 'core'
-  }
+  },
+  {
+    text: 'Патлумачце, што азначае currying. Прывядзіце прыклады выкарыстаньня на практыцы.',
+    level: 'middle',
+    topic: 'function'
+  },
+  {
+    text: 'Прявядзіце прыклад хфункцыі з мэмазацай. Калі варта дастасоўваць гэту тэхніку?',
+    level: 'middle',
+    topic: 'function'
+  },
+  {
+    text: 'Што такое чэйнінг хвункцаў? Напішыце прыклад з выкарыстаньнем гэтага падыходу.',
+    level: 'middle',
+    topic: 'function'
+  },
+  {
+    text: 'У чым розьніца паміж function і arrow function? Якім будзе рэзультат выкананьня коду?',
+    level: 'middle',
+    topic: 'function',
+    image: 'https://miro.medium.com/max/700/1*Dtm3ta_AH2TfrPyJQPabng.png'
+  },
+  {
+    text: 'У чым прынцыповая розьніца паміж падзеямі mouseleave і mouseout?',
+    level: 'middle',
+    topic: 'frontend'
+  },
+  {
+    text: 'У якім парадку абрабляюцца прызначаныя для карыстальніка падзеі ў DOM (click, mouseover і г.д.)? FIFO ці LIFO?',
+    level: 'middle',
+    topic: 'frontend'
+  },
+  {
+    text: 'Што такое Event bubbling ды Event capturing?',
+    level: 'middle',
+    topic: 'frontend'
+  },
+  {
+    text: 'Параўнайце мэтады об’екта event stopPropagation ды stopImmediatePropagation.',
+    level: 'middle',
+    topic: 'frontend'
+  },
+  {
+    text: 'Якія ёсьцека падыходы аптымізацы прадуктыўнасьці вэбстаронкі?',
+    level: 'middle',
+    topic: 'frontend'
+  },
+  {
+    text: 'Як рэалізавана мэханізма same-origin policy ў браўзэры? На якія браўзэрныя API ён пашыраецца?',
+    level: 'middle',
+    topic: 'frontend'
+  },
+  {
+    text: 'Назавіце спосабы захоўваньня дадзеных у браўзэры. Параўнайце іх.',
+    level: 'middle',
+    topic: 'frontend'
+  },
+  {
+    text: 'Web worker’ы. Апішыце асаблівасьці перадачы дадзеных паміж worker’амі ды асноўным патокам, паміж разьдзеленымі worker’амі.',
+    level: 'middle',
+    topic: 'frontend'
+  },
+  {
+    text: 'Што такое Transferable-аб’екты?',
+    level: 'middle',
+    topic: 'frontend'
+  },
+  {
+    text: 'Раскажыце пра спосабы аптымізацы выкананьня рэсурсаёмістых апэрацаў JS для паляпшэньня прадуктыўнасьці рэндэрынгу кантэнту на старонцы.',
+    level: 'middle',
+    topic: 'frontend'
+  },
+  {
+    text: 'Чаму ResizeObserver выклікае падзеі зьмены памеру да ўзнаўленьня элемэнту, а не пасьля?',
+    level: 'middle',
+    topic: 'frontend'
+  },
+  {
+    text: 'Раскажыце, як самі разумееце Web Accessibility?',
+    level: 'middle',
+    topic: 'frontend'
+  },
+  {
+    text: 'Апішыце алгарытм стварэньня хвункцаналу, што забясьпечвае чытаньне зьмесьціва .txt-хвайлу пры перацягваньні яго з хвайлавае сыстэмы ў вакно браўзэра.',
+    level: 'middle',
+    topic: 'frontend'
+  },
+  {
+    text: 'Што такое Virtual DOM?',
+    level: 'middle',
+    topic: 'frontend'
+  },
+  {
+    text: 'Патлумачце розьніцу паміж адзінкамі вымярэньня px, em, rem.',
+    level: 'middle',
+    topic: 'design'
+  },
+  {
+    text: 'Для чаго патрэбны CSS-пераменныя? Прывядзіце некалькі прыкладаў выкарыстаньня.',
+    level: 'middle',
+    topic: 'design'
+  },
+  {
+    text: 'Што адбудзецца пры дадаваньні наступнага сэлектара?',
+    level: 'middle',
+    topic: 'design',
+    image: 'https://miro.medium.com/max/339/1*oa3JWsGSruMtYgyFU79jLQ.png',
+  },
+  {
+    text: 'Як адаптаваць старонку для друку?',
+    level: 'middle',
+    topic: 'design'
+  },
+  {
+    text: 'Апішыце асаблівасьці кастамізацы стыляў стандартных элемэнтаў хорм.',
+    level: 'middle',
+    topic: 'design'
+  },
+  {
+    text: 'Што такое progressive рэндэрынг? Якія падыходы выкарыстоўваюцца?',
+    level: 'middle',
+    topic: 'design'
+  },
+  {
+    text: 'Назавіце некалькі спосабаў рэалізацы lazy-loading мэдыарэсурсаў на старонцы.',
+    level: 'middle',
+    topic: 'design'
+  },
+  {
+    text: 'Назавіце папулярныя шабланізатары для хрантэнд-распрацоўкі. Апішыце асаблівасьці іх выкарыстаньня.',
+    level: 'middle',
+    topic: 'design'
+  },
+  {
+    text: 'Назавіце папулярныя CSS-метадалёгіі ды іх адрозьненьні.',
+    level: 'middle',
+    topic: 'design'
+  },
+  {
+    text: 'Як працуе CSS Grid?',
+    level: 'middle',
+    topic: 'design'
+  },
+  {
+    text: 'Якія хварматы відарысаў падтрымліваюць анімацу?',
+    level: 'middle',
+    topic: 'design'
+  },
+  {
+    text: 'Як адсачыць прагрэс/заканчэньне CSS @keyframes анімацаў альбо плаўных пераходаў, рэалізаваных з дапамогай transition, у JS?',
+    level: 'middle',
+    topic: 'design'
+  },
+  {
+    text: 'Якія CSS-уласьцівасьці могуць быць аброблены непасрэдна праз GPU? Што такое кампазытныя слоі й чаму іх вялікая колькасьць можа прывесьці да аварыйнага завяршэньня работы браўзэра на мабільных прыладах?',
+    level: 'middle',
+    topic: 'design'
+  },
+  {
+    text: 'Як перавыкарыстаць інляйнавыя SVG-элементы на старонцы?',
+    level: 'middle',
+    topic: 'design'
+  },
+  {
+    text: 'Апішыце спосабы аптымізацы SVG-хвайлаў.',
+    level: 'middle',
+    topic: 'design'
+  },
+  {
+    text: 'Як рэалізаваць іконкавы шрыхт з пэўнага набору SVG-хвайлаў?',
+    level: 'middle',
+    topic: 'design'
+  },
+  {
+    text: 'Што такое ілжывае тлустае альбо ілжывае курсіўнае (Faux) напісаньне шрыхтоў?',
+    level: 'middle',
+    topic: 'design'
+  },
+  {
+    text: 'Што такое #shadow-root у інспэктары HTML-старонкі?',
+    level: 'middle',
+    topic: 'design'
+  },
+  {
+    text: 'Навошта патрэбны Custom Elements?',
+    level: 'middle',
+    topic: 'design'
+  },
+  {
+    text: 'Чаму выдаленьне лішніх сымбаляў прагалаў/сымбаляў пераносу ў HTML не адбіваецца на канчатковай прадукцыйнасьці загрузкі старонкі?',
+    level: 'middle',
+    topic: 'design'
+  },
+  {
+    text: 'Што такое кантэкст адвображэньня canvas? Якія існуюць тыпы кантэксту для рэндэрынгу дзьвюхмернае і трохмернае грахвікі?',
+    level: 'middle',
+    topic: 'design'
+  },
+  {
+    text: 'Як працуе Dependency injection? Навошта гэта патрэбна? Раскажыце пра выкарыстаньне кастамных інжэктараў.',
+    level: 'middle',
+    topic: 'angular'
+  },
+  {
+    text: 'Што такое zone.js? Для чаго Angular выкарыстоўвае зоны? Зь якой мэтай можна выкарыстоўваць NgZone-сэрвіс?',
+    level: 'middle',
+    topic: 'angular'
+  },
+  {
+    text: 'Як працуе Change detection? Як можна аптымізаваць кампанэнт з дапамогай схемаў Change detection? Якія шчэ прыёмы ёсьцека для аптымізацы рэндэрынгу (зьвязаныя з Change detection) ?',
+    level: 'middle',
+    topic: 'angular'
+  },
+  {
+    text: 'Як выканаць канхвігурацу HTTP-сэрвісу? Навошта яна патрэбна? Абробка HTTP-памылак?',
+    level: 'middle',
+    topic: 'angular'
+  },
+  {
+    text: 'Якія ёсьціка падыходы да арганізацы работы з дадзенымі?',
+    level: 'middle',
+    topic: 'angular'
+  },
+  {
+    text: 'Як падрыхтаваць зборнік да дэплою?',
+    level: 'middle',
+    topic: 'angular'
+  },
+  {
+    text: 'Што такое NgRx? Калі варта яго выкарыстоўваць?',
+    level: 'middle',
+    topic: 'angular'
+  },
+  {
+    text: 'У якіх выпадках лепш выкарыстоўваць Renderer-сэрвіс замест натыўных мэтадаў? І наадварот?',
+    level: 'middle',
+    topic: 'angular'
+  },
+  {
+    text: 'Як працуюць і для чаго патрэбны рэзолвэры? Як атрымаць дадзеныя, загружаныя рэзолвэрамі?',
+    level: 'middle',
+    topic: 'angular'
+  },
+  {
+    text: 'Як працуюць і навошта патрэбны дынамічныя кампанэнты? Прывядзіце прыклады іх мэтазгоднага выкарыстаньня.',
+    level: 'middle',
+    topic: 'angular'
+  },
+  {
+    text: 'Якая розьніца паміж @ViewChild і @ContentChild?',
+    level: 'middle',
+    topic: 'angular'
+  },
+  {
+    text: 'Што робіць код і як інакш можна зьвязаць клясу кампанэнта зь пераменнай?',
+    level: 'middle',
+    topic: 'angular',
+    image: 'https://miro.medium.com/max/410/1*QzxqWt2lXjLt0hiJX6Q8PQ.png'
+  },
+  {
+    text: 'Як можна кэшаваць дадзеныя, выкарыстоўваючы сэрвісы альбо RxJS?',
+    level: 'middle',
+    topic: 'angular'
+  },
+  {
+    text: 'Што такое асінхронная валідаца хормаў? Калі дастасоўваецца й як рэалізуецца?',
+    level: 'middle',
+    topic: 'angular'
+  },
+  {
+    text: 'Навошта патрэбна forRoot-хвункцыя модуля?',
+    level: 'middle',
+    topic: 'angular'
+  },
+  {
+    text: 'Якая розьніца паміж дэкляраваньнем і экспартам кампанэнта з модуля?',
+    level: 'middle',
+    topic: 'angular'
+  },
+  {
+    text: 'Чаму дрэнна “правайдзіць” сэрвіс з shared-модуля ў lazy-load модуль? (Пытаньне пра scope модуляў).',
+    level: 'middle',
+    topic: 'angular'
+  },
+  {
+    text: 'Што такое ::ng-deep і для чаго выкарыстоўваецца?',
+    level: 'middle',
+    topic: 'angular'
+  },
+  {
+    text: 'Якія тэсты можна запусьціць для Angular-прыкладаньня? Якія інструмэнты выкарыстоўваюць для тэставаньня Angular-прыкладаньня?',
+    level: 'middle',
+    topic: 'angular'
+  },
+  {
+    text: 'Як пратэставаць Angular-сэрвіс?',
+    level: 'middle',
+    topic: 'angular'
+  },
+  {
+    text: 'Што такое JSX? Што ляжыць у ягонай аснове?',
+    level: 'middle',
+    topic: 'react'
+  },
+  {
+    text: 'Як працуе алгарытма Virtual DOM?',
+    level: 'middle',
+    topic: 'react'
+  },
+  {
+    text: 'Для чаго патрэбна ўласьцівасьць key падчас рэндэрынгу сьпісаў?',
+    level: 'middle',
+    topic: 'react'
+  },
+  {
+    text: 'У чым розьніца паміж хвункцанальнымі ды клясавымі кампанэнтамі?',
+    level: 'middle',
+    topic: 'react'
+  },
+  {
+    text: 'Навошта й калі патрэбна перадаваць props у super() пры выкарыстоўваньні клясавых кампанэнтаў?',
+    level: 'middle',
+    topic: 'react'
+  },
+  {
+    text: 'Чаму патрэбна выкарыстоўваць setState() для абнаўленьня нутранага стану кампанэнта?',
+    level: 'middle',
+    topic: 'react'
+  },
+  {
+    text: 'У чым заключаецца прынцып “пад’ёму стану”?',
+    level: 'middle',
+    topic: 'react'
+  },
+  {
+    text: 'Якія бібліятэкі мэнэджмэнту стану React-прыкладаньня самі знаеце? Навошта яны?',
+    level: 'middle',
+    topic: 'react'
+  },
+  {
+    text: 'Калі варта выкарыстоўваць Redux? Якія ёсьцека альтэрнатывы?',
+    level: 'middle',
+    topic: 'react'
+  },
+  {
+    text: 'Redux vs Mobx?',
+    level: 'middle',
+    topic: 'react'
+  },
+  {
+    text: 'Раскажыце пра базавы прынцып работы React Hooks.',
+    level: 'middle',
+    topic: 'react'
+  },
+  {
+    text: 'У чым розьніца паміж createRef і useRef?',
+    level: 'middle',
+    topic: 'react'
+  },
+  {
+    text: 'Калі варта выкарыстоўваць React refs? Калі ня варта?',
+    level: 'middle',
+    topic: 'react'
+  },
+  {
+    text: 'Якія недалікі бібліятэкі React бачыце?',
+    level: 'middle',
+    topic: 'react'
+  },
+  {
+    text: 'Якія патэрны выкарыстоўваеце разам з React?',
+    level: 'middle',
+    topic: 'react'
+  },
+  {
+    text: 'Як ставіцеся ды тыпізацы разам з React?',
+    level: 'middle',
+    topic: 'react'
+  },
+  {
+    text: 'Як пабудаваць добрую архітэктуру React-праекту?',
+    level: 'middle',
+    topic: 'react'
+  },
+  {
+    text: 'Аптымізаца React-прыкладаньняў? Як вымераць прадукцыйнасьць праграмы?',
+    level: 'middle',
+    topic: 'react'
+  },
+  {
+    text: 'Ці можна прыкладаньне на React убадаваць у іншае прыкладаньне на React?',
+    level: 'middle',
+    topic: 'react'
+  },
+  {
+    text: 'Чаму Node.js аднапатокавы, а не шматпатокавы?',
+    level: 'middle',
+    topic: 'backend'
+  },
+  {
+    text: 'Што такое event driven development?',
+    level: 'middle',
+    topic: 'backend'
+  },
+  {
+    text: 'Параўнайце fork() ды spawn() мэтады.',
+    level: 'middle',
+    topic: 'backend'
+  },
+  {
+    text: 'Раскажыце пра Node.js хрэймворкі, якія выкарыстоўвалі. Якая паміж імі розьніца?',
+    level: 'middle',
+    topic: 'backend'
+  },
+  {
+    text: 'Апішыце словамі код эндпойнта, які павінен захаваць з кліента хвайл памерам 4 гігабайты й пакласьці яго на S3 альбо іншы CDN.',
+    level: 'middle',
+    topic: 'backend'
+  },
+  {
+    text: 'Што такое мікрасэрвісы, навошта іх выкарыстоўваюць?',
+    level: 'middle',
+    topic: 'backend'
+  },
+  {
+    text: 'У якіх выпадках самі б абралі маналіт, а ў якіх — мікрасэрвісы?',
+    level: 'middle',
+    topic: 'backend'
+  },
+  {
+    text: 'Як зразумець, што прыкладаньне ў пэўны момант працуе спраўна?',
+    level: 'middle',
+    topic: 'backend'
+  },
+  {
+    text: 'Як зразумець, што прыкладаньне за апошнія тры дні працавала спраўна?',
+    level: 'middle',
+    topic: 'backend'
+  },
+  {
+    text: 'Як адбываецца праверка правільнасьці паролю пры выкарыстаньні bcrypt?',
+    level: 'middle',
+    topic: 'backend'
+  },
+  {
+    text: 'Што такое JWT?',
+    level: 'middle',
+    topic: 'backend'
+  },
+  {
+    text: 'Джуніар даслаў код на рэўю. Што тут ня так? Як выправіць?',
+    level: 'middle',
+    topic: 'backend',
+    image: 'https://miro.medium.com/max/700/1*1SEHqqjXZjAAn5YUEmP4LA.png',
+  },
+  {
+    text: 'Для чаго патрэбен package-lock.json?',
+    level: 'middle',
+    topic: 'tools'
+  },
+  {
+    text: 'У чым розьніца паміж npm install і npm ci?',
+    level: 'middle',
+    topic: 'tools'
+  },
+  {
+    text: 'Для чаго патрэбны бандлэры?',
+    level: 'middle',
+    topic: 'tools'
+  },
+  {
+    text: 'Раскажыце пра модульнае падключэньне скрыптоў. Прывядзіце прыклады выкарыстаньня загрузчыкаў/бандлэраў модуляў.',
+    level: 'middle',
+    topic: 'tools'
+  },
+  {
+    text: 'Чым адрозьніваюцца git merge і git rebase?',
+    level: 'middle',
+    topic: 'tools'
+  },
+  {
+    text: 'Што такое staging area ў git?',
+    level: 'middle',
+    topic: 'tools'
+  },
+  {
+    text: 'Апішыце працэс code review. Назавіце асноўныя правілы, спосабы вырашэння канхліктаў і спрэчак падчас яго правядзеньня.',
+    level: 'middle',
+    topic: 'tools'
+  },
+  {
+    text: 'Напішыце хвункцыю Sleep (ms), якая спыняе выкананьне async-хвункцыі на зададзены прамежак часу.',
+    level: 'middle',
+    topic: 'practice'
+  },
+  {
+    text: 'Рэалізуйце адзін з мэтадаў масіву (напрыклад splice).',
+    level: 'middle',
+    topic: 'practice'
+  },
+  {
+    text: 'Напішыце хвункцыю з RefExp для знаходжаньня ўсіх HTML-спасылак у радку.',
+    level: 'middle',
+    topic: 'practice'
+  },
+  {
+    text: 'Рэалізуйце хвункцыю, якая выканае callback для ўсіх элемэнтаў пэўнай галіны DOM-дрэва.',
+    level: 'middle',
+    topic: 'practice'
+  },
+  {
+    text: 'Рэалізуйце табліцу зь віртуальным скролам.',
+    level: 'middle',
+    topic: 'practice'
+  },
+  {
+    text: 'Рэалізуйце хвункцыю ператварэньня URL query радка ў JSON.',
+    level: 'middle',
+    topic: 'practice',
+    image: 'https://miro.medium.com/max/700/1*sMZBsxRy5igbb3FrZOImFg.png',
+  },
+  {
+    text: 'Рэалізуйце хвункцыю знаходжаньня перасеку двух масіваў.',
+    level: 'middle',
+    topic: 'practice',
+    image: 'https://miro.medium.com/max/700/1*6cb7wZ38QwWTouAmmjQCVA.png',
+  },
+  {
+    text: 'Рэалізуйце хвункцыю/клясу для гэнэрацы HTML.',
+    level: 'middle',
+    topic: 'practice',
+    image: 'https://miro.medium.com/max/700/1*S-Hc4USa7j1ldG3hK6DZdA.png',
+  },
+  {
+    text: 'Як ёсьціка праект з абмежаванымі тэрмінамі ды некрытычнай прадукцыйнасьцю, чым кіравацьмецеся пры выбары бібліятэк, падыходаў? Ці ўсё ж зьвяртацьмеце ўвагу на прадукцыйнасьць? Альбо наадварот: тэрміны нелімітаваны, прадукцыйнасьць важна. Вашэцевы дзеяньні?',
+    level: 'middle',
+    topic: 'practice'
+  },
 ]
 
 
@@ -993,7 +1530,7 @@ export const Questions = ({ level, topic, filters }) => {
               {
                 image && (
                   <figure>
-                    <div role="button" tabindex="0">
+                    <div role="button">
                       <div>
                         <img alt="" src={image} loading="lazy" role="presentation"/>
                       </div>
