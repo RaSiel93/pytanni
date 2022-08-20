@@ -1511,6 +1511,196 @@ const questions = [
     level: 'middle',
     topic: 'practice'
   },
+  {
+    text: 'Раскажыце пра хвункцанальнае праграмаваньне.',
+    level: 'senior',
+    topic: 'general'
+  },
+  {
+    text: 'Што такое TDD (Test Driven Development)/BDD (Behavior Driven Development)?',
+    level: 'senior',
+    topic: 'general'
+  },
+  {
+    text: 'Раскажыце дэталёва пра работу HTTPS.',
+    level: 'senior',
+    topic: 'general'
+  },
+  {
+    text: 'Які стэк тэхналёгіяў можна абраць для рэалізацы клону якога-небудзь вядомага праекту й чаму?',
+    level: 'senior',
+    topic: 'general'
+  },
+  {
+    text: 'Ёсьцека праект на старых тэхналёгіях, неабходна ў яго ўносіць зьмены. Як гэта зрабіць найлепш?',
+    level: 'senior',
+    topic: 'general'
+  },
+  {
+    text: 'Як кандыдат мае досьвед работы зь некалькімі хрэймворкамі: які выкарыстоўвацьмеце для наступнага праекту? Якія хвактары ўплывацьмуць на выбар?',
+    level: 'senior',
+    topic: 'general'
+  },
+  {
+    text: 'Што такое V8 Engine?',
+    level: 'senior',
+    topic: 'general'
+  },
+  {
+    text: 'Рэалізаца патэрну Class Free OOP (https://observablehq.com/@bratter/class-free-oop).',
+    level: 'senior',
+    topic: 'core'
+  },
+  {
+    text: 'Патэрн async disposer (https://advancedweb.hu/what-is-the-async-disposer-pattern-in-javascript).',
+    level: 'senior',
+    topic: 'core'
+  },
+  {
+    text: 'Выкарыстаньне рэгулярных выразаў. Калі прымальна/няпрымальна? Як яны працуюць? Як можна зрабіць чытэльным код?',
+    level: 'senior',
+    topic: 'core'
+  },
+  {
+    text: 'Як браўзэр вызначае, ці можам стасавацца паміж укладкамі?',
+    level: 'senior',
+    topic: 'function'
+  },
+  {
+    text: 'Што такое Content Security Policy?',
+    level: 'senior',
+    topic: 'function'
+  },
+  {
+    text: 'Як пазбегнуць загрузкі кэшаваных хвайлаў скрыптаў і стыляў?',
+    level: 'senior',
+    topic: 'function'
+  },
+  {
+    text: 'Што такое requestAnimationFrame?',
+    level: 'senior',
+    topic: 'function'
+  },
+  {
+    text: 'Раскажыце пра мікрасэрвісную архітэктуру',
+    level: 'senior',
+    topic: 'function'
+  },
+  {
+    text: 'Што такое Shadow DOM?',
+    level: 'senior',
+    topic: 'frontend'
+  },
+  {
+    text: 'Параўнайце nextElementSibling ды nextSibling.',
+    level: 'senior',
+    topic: 'frontend'
+  },
+  {
+    text: 'Якія знаеце мэтрыкі вэбсайту?',
+    level: 'senior',
+    topic: 'frontend'
+  },
+  {
+    text: 'Як праводзіцца канхвігураца NgZone-модуля? Калі гэта неабходна?',
+    level: 'senior',
+    topic: 'angular'
+  },
+  {
+    text: 'Што раздражняе ў хрэймворку? Што б самі зьмянілі?',
+    level: 'senior',
+    topic: 'angular'
+  },
+  {
+    text: 'Як бы самі вырашалі, што дадаць у наступным рэлізе хрэймворку, якая б хвіча гэта была?',
+    level: 'senior',
+    topic: 'angular'
+  },
+  {
+    text: 'Ці пісалі кастамныя дэкаратары? Як так, то навошта?',
+    level: 'senior',
+    topic: 'angular'
+  },
+  {
+    text: 'Зрабіце рэўю коду ды дайце заўвагі што да архітэктуры.',
+    level: 'senior',
+    topic: 'angular'
+  },
+  {
+    text: 'Раскажыце, як бы самі рабілі такія хвічы. Апішыце архітэктуру хвічы ў прыкладаньні.',
+    level: 'senior',
+    topic: 'angular'
+  },
+  {
+    text: 'Параўнайце Common.js з AMD Modules ды ES6 Imports.',
+    level: 'senior',
+    topic: 'backend'
+  },
+  {
+    text: 'Які хрэймворк выбралі б для бэкэнду, чаму?',
+    level: 'senior',
+    topic: 'backend'
+  },
+  {
+    text: 'Апішыце сваімі словамі, як працуе OAuth v2.',
+    level: 'senior',
+    topic: 'backend'
+  },
+  {
+    text: 'Ёсьцека праект з крыніцамі выцёку памяці, як іх выявіць, адсунуць ды прадухіліць у будучыні?',
+    level: 'senior',
+    topic: 'backend'
+  },
+  {
+    text: 'Ёсьцека праект з performance issues, як іх выявіць, адсунуць ды прадухіліць у будучыні?',
+    level: 'senior',
+    topic: 'backend'
+  },
+  {
+    text: 'Ці можаце апісаць сутнасьць мэтадалёгіі git flow дзьвума словамі?',
+    level: 'senior',
+    topic: 'tools'
+  },
+  {
+    text: 'Што азначае вымога рабіць squash commits падчас rebase?',
+    level: 'senior',
+    topic: 'tools'
+  },
+  {
+    text: 'Якая вашэцева думка пра альтэрнатыўныя сыстэмы кантролю вэрсіяў (Version Control System)?',
+    level: 'senior',
+    topic: 'tools'
+  },
+  {
+    text: 'Якія канвэнцыі знаеце й выкарыстоўваеце для git?',
+    level: 'senior',
+    topic: 'tools'
+  },
+  {
+    text: 'Раскажыце пра свой досьвед выкарыстаньня/укарэньваньня CI/CD.',
+    level: 'senior',
+    topic: 'tools'
+  },
+  {
+    text: 'Патрэбна наладзіць дэплой праекту на некалькі асяродзьдзяў. Раскажыце, як бы самі будавалі працэс? Якія інструмэнты выкарыстоўвалі б?',
+    level: 'senior',
+    topic: 'tools'
+  },
+  {
+    text: 'Рэалізуйце асінхронны мэтад filter для Array (павінны працаваць await).',
+    level: 'senior',
+    topic: 'practice'
+  },
+  {
+    text: 'Рэалізуйце хвункцыю reduce з дапамогай рэкурсіі.',
+    level: 'senior',
+    topic: 'practice'
+  },
+  {
+    text: 'Як можна было б зрабіць toggle-кампанэнт, як у iPhone, бяз выкарыстаньня JS?',
+    level: 'senior',
+    topic: 'practice'
+  }
 ]
 
 
